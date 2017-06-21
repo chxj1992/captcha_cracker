@@ -37,7 +37,7 @@ def predict():
         text += code[i]
 
     print("the image is", text)
-    return {'image': base64.b64encode(bytes_io.getvalue()), 'text': text}
+    return {'image': base64.b64encode(bytes_io.getvalue()).decode(), 'text': text}
 
 
 @app.route('/')
