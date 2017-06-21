@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Captcha</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body style="padding-top: 120px;">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">
+                <span class="glyphicon glyphicon-th"> </span> 验证码识别
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="text-center">
+            <img id="img" src="" alt="">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="text-center">
+            验证码 ： <strong id="value"></strong>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="text-center">
+            <button id="btn" class="btn btn-success"> 刷新</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            var fetch = function () {
+
+                $.getJSON('/fetch', function (res) {
+                    $('#img').attr('src', 'data:image/png;base64, ' + res['image']);
+                    $('#value').text(res['text']);
+                    $('#btn').attr('disabled', false);
+                    $('body').css('cursor', 'auto');
+                });
+            };
+
+            $('#btn').click(function () {
+                $('#btn').attr('disabled', true);
+                $('body').css('cursor', 'wait');
+                fetch();
+            });
+
+            fetch();
+        });
+
+    </script>
+
+</body>
+</html>
