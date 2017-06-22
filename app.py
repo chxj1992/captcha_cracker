@@ -7,7 +7,7 @@ from PIL import Image
 from flask import Flask
 from flask import jsonify, render_template
 
-from model import model as m
+import model as m
 
 app = Flask(__name__)
 

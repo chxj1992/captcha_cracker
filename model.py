@@ -41,7 +41,7 @@ def build(input_shape, num_classes):
                   optimizer=opt,
                   metrics=['accuracy'])
 
-    if os.path.isfile('verify_code.hdf5'):
-        model.load_weights('verify_code.hdf5')
+    if os.path.isfile('weights.hdf5'):
+        model.load_weights('weights.hdf5')
 
     return model
