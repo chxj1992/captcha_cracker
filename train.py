@@ -9,8 +9,8 @@ batch_size = 32
 num_classes = 45
 epochs = 100
 
-data_train = cPickle.load(open('train2_batch', "rb"))
-data_test = cPickle.load(open('test2_batch', "rb"))
+data_train = cPickle.load(open('train_batch', "rb"))
+data_test = cPickle.load(open('test_batch', "rb"))
 
 x_train = data_train['data']
 y_train = data_train['labels']
