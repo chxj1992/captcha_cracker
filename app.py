@@ -11,7 +11,7 @@ import model as m
 
 app = Flask(__name__)
 
-code = '2346789abcdefghjmnpqrtuxyzABCDEFGHJMNPQRTUXYZ'
+classes = '2346789abcdefghjmnpqrtuxyzABCDEFGHJMNPQRTUXYZ'
 
 
 def predict():
@@ -28,13 +28,13 @@ def predict():
     char3 = arr[0:36, 60:90]
     char4 = arr[0:36, 90:120]
 
-    model = m.build((36, 30, 3), len(code))
+    model = m.build((36, 30, 3), len(classes))
     input = np.array([char1, char2, char3, char4])
     predict = model.predict(input)
 
     text = ''
     for i in np.argmax(predict, axis=1):
-        text += code[i]
+        text += classes[i]
 
     print("the image is", text)
     return {'image': base64.b64encode(bytes_io.getvalue()).decode(), 'text': text}
