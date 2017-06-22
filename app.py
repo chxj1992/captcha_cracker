@@ -15,7 +15,7 @@ classes = '2346789abcdefghjmnpqrtuxyzABCDEFGHJMNPQRTUXYZ'
 
 
 def predict():
-    url = 'http://www.medlinker.com/util/captcha?3102'
+    url = 'http://api.shuibei.chxj.name/captcha'
 
     response = requests.get(url)
     bytes_io = BytesIO(response.content)
