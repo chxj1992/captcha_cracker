@@ -8,7 +8,7 @@ class CaptchaGenerator
     const FOLDER = 'images_train/';
     const COUNT = 2000;
 
-    public function testBasic()
+    public function run()
     {
         for ($i = 0; $i < self::COUNT; $i++) {
             $this->geneCaptcha();
@@ -16,8 +16,6 @@ class CaptchaGenerator
                 print "$i code done";
             }
         }
-
-        $this->assertTrue(true);
     }
 
 
