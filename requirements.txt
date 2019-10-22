@@ -3,7 +3,7 @@ certifi==2017.4.17
 chardet==3.0.4
 click==6.7
 cycler==0.10.0
-Flask==0.12.2
+Flask==1.0
 graphviz==0.7.1
 h5py==2.7.0
 idna==2.5
@@ -21,7 +21,6 @@ pydot-ng==1.0.0
 pyparsing==2.2.0
 python-dateutil==2.6.0
 pytz==2017.2
-PyYAML==3.12
 requests==2.20.0
 scipy==0.19.0
 simplejson==3.10.0
