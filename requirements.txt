@@ -12,7 +12,7 @@ Jinja2==2.9.6
 Keras==2.0.4
 MarkupSafe==1.0
 matplotlib==2.0.2
-numpy==1.13.0
+numpy==1.22.0
 olefile==0.44
 Pillow==6.2.0
 protobuf==3.3.0
